@@ -1,0 +1,39 @@
+require ('dotenv').config();
+
+const express = require('express');
+const cors = require('cors');
+
+const app = express();
+
+const dotenv = require('dotenv');
+
+const connectDb = require('./config/db');
+
+const authRoutes = require('./routes/authRoutes');
+const categoryRoutes = require('./routes/categoryRoutes');
+const productRoutes = require("./routes/productRoutes");
+const cartRoutes = require("./routes/cartRoutes");
+const orderRoutes = require("./routes/orderRoutes");
+
+dotenv.config()
+
+connectDb();
+
+app.use(cors());
+app.use(express.json());
+
+app.use('/api/auth', authRoutes);
+app.use('/api/categories', categoryRoutes);
+app.use("/api/products", productRoutes);
+app.use("/api/cart", cartRoutes);
+app.use("/api/order", orderRoutes);
+
+app.get('/', (req, res) => 
+  {
+  res.send('Hello World!');
+  }
+);
+
+app.listen(3000, () => {
+  console.log('Server is running on port 3000');
+});

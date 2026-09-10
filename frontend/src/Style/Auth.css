@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f8fafc;
+}
+
+.container{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+}
+
+.form-box{
+
+    width:430px;
+
+    background:#ffffff;
+
+    padding:45px;
+
+    border-radius:20px;
+
+    border:1px solid #e2e8f0;
+
+    box-shadow:0 20px 45px rgba(15,23,42,.08);
+
+}
+
+.form-box h2{
+
+    text-align:center;
+
+    font-size:32px;
+
+    color:#0f172a;
+
+    margin-bottom:12px;
+
+}
+
+.subtitle{
+
+    text-align:center;
+
+    color:#64748b;
+
+    margin-bottom:35px;
+
+    font-size:15px;
+
+}
+
+.input-group{
+
+    margin-bottom:22px;
+
+}
+
+.input-group label{
+
+    display:block;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    color:#334155;
+
+    margin-bottom:8px;
+
+}
+
+.input-group input{
+
+    width:100%;
+
+    padding:15px 18px;
+
+    font-size:15px;
+
+    border:1px solid #cbd5e1;
+
+    border-radius:12px;
+
+    background:#ffffff;
+
+    transition:.3s;
+
+}
+
+.input-group input:focus{
+
+    outline:none;
+
+    border-color:#2563eb;
+
+    box-shadow:0 0 0 4px rgba(37,99,235,.12);
+
+}
+
+button{
+
+    width:100%;
+
+    padding:15px;
+
+    margin-top:10px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#2563eb;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    box-shadow:0 12px 25px rgba(37,99,235,.25);
+
+}
+
+button:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-2px);
+
+}
+
+.bottom-text{
+
+    text-align:center;
+
+    margin-top:28px;
+
+    color:#64748b;
+
+    font-size:15px;
+
+}
+
+.bottom-text a{
+
+    color:#2563eb;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+.bottom-text a:hover{
+
+    text-decoration:underline;
+
+}
+
+/* Optional Divider */
+
+.divider{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin:28px 0;
+
+    color:#94a3b8;
+
+    font-size:14px;
+
+}
+
+.divider::before,
+.divider::after{
+
+    content:"";
+
+    flex:1;
+
+    height:1px;
+
+    background:#e2e8f0;
+
+}
+
+/* Responsive */
+
+@media(max-width:500px){
+
+.form-box{
+
+width:100%;
+
+padding:30px 25px;
+
+}
+
+.form-box h2{
+
+font-size:28px;
+
+}
+
+}

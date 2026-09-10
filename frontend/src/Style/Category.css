@@ -1,0 +1,361 @@
+.category-page {
+  min-height: 100vh;
+  padding: 50px 8%;
+  background: #f7f7f7;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.category-label {
+  color: #b78654;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.category-header h1 {
+  font-size: 42px;
+  margin: 0;
+  color: #111;
+}
+
+.category-subtitle {
+  color: #777;
+  margin-top: 10px;
+}
+
+
+/* =========================
+   CATEGORY COUNT
+========================= */
+
+.category-count {
+  min-width: 150px;
+  padding: 20px 25px;
+  background: #111;
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.category-count span {
+  display: block;
+  font-size: 32px;
+  font-weight: 700;
+  color: #d4a574;
+}
+
+.category-count small {
+  color: #ccc;
+}
+
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.category-content {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+
+/* =========================
+   FORM CARD
+========================= */
+
+.category-form-card {
+  background: white;
+  padding: 30px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  position: sticky;
+  top: 25px;
+}
+
+.category-form-card h2 {
+  margin: 0 0 8px;
+  font-size: 22px;
+}
+
+.category-form-card > p {
+  color: #777;
+  font-size: 14px;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+.category-form-card label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.category-form-card input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  outline: none;
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+
+.category-form-card input:focus {
+  border-color: #b78654;
+}
+
+
+/* =========================
+   FORM BUTTONS
+========================= */
+
+.category-form-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.primary-btn {
+  flex: 1;
+  padding: 13px;
+  border: none;
+  background: #111;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.primary-btn:hover {
+  background: #b78654;
+}
+
+.cancel-btn {
+  padding: 13px 18px;
+  border: 1px solid #ddd;
+  background: white;
+  color: #555;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.cancel-btn:hover {
+  background: #f1f1f1;
+}
+
+
+/* =========================
+   LIST CARD
+========================= */
+
+.category-list-card {
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.list-header {
+  padding: 25px 30px;
+  border-bottom: 1px solid #eee;
+}
+
+.list-header h2 {
+  margin: 0 0 6px;
+  font-size: 22px;
+}
+
+.list-header p {
+  margin: 0;
+  color: #888;
+  font-size: 13px;
+}
+
+
+/* =========================
+   CATEGORY ITEM
+========================= */
+
+.category-list {
+  padding: 8px 20px;
+}
+
+.category-item {
+  display: flex;
+  align-items: center;
+  padding: 18px 10px;
+  border-bottom: 1px solid #eee;
+  gap: 20px;
+  transition: 0.2s;
+}
+
+.category-item:last-child {
+  border-bottom: none;
+}
+
+.category-item:hover {
+  background: #fafafa;
+}
+
+
+/* NUMBER */
+
+.category-number {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f3ede7;
+  color: #b78654;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 6px;
+}
+
+
+/* NAME */
+
+.category-name {
+  flex: 1;
+}
+
+.category-name h3 {
+  margin: 0 0 5px;
+  font-size: 16px;
+  color: #222;
+}
+
+.category-name span {
+  font-size: 12px;
+  color: #999;
+}
+
+
+/* ACTIONS */
+
+.category-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.edit-btn,
+.delete-btn {
+  padding: 8px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.edit-btn {
+  background: white;
+  border: 1px solid #ddd;
+  color: #333;
+}
+
+.edit-btn:hover {
+  background: #111;
+  color: white;
+  border-color: #111;
+}
+
+.delete-btn {
+  background: white;
+  border: 1px solid #e3c5c2;
+  color: #c0392b;
+}
+
+.delete-btn:hover {
+  background: #c0392b;
+  color: white;
+}
+
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.empty-category {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.empty-icon {
+  font-size: 45px;
+  margin-bottom: 15px;
+}
+
+.empty-category h3 {
+  margin-bottom: 8px;
+}
+
+.empty-category p {
+  color: #888;
+  font-size: 14px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+  .category-content {
+    grid-template-columns: 1fr;
+  }
+
+  .category-form-card {
+    position: static;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .category-page {
+    padding: 30px 5%;
+  }
+
+  .category-header {
+    align-items: flex-start;
+    gap: 20px;
+    flex-direction: column;
+  }
+
+  .category-header h1 {
+    font-size: 34px;
+  }
+
+  .category-count {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .category-item {
+    flex-wrap: wrap;
+  }
+
+  .category-actions {
+    width: 100%;
+    margin-left: 62px;
+  }
+
+}
