@@ -27,7 +27,7 @@ function Profile() {
 
     const fetchProfile = async () => {
       try {
-        const res = await api.get("http://localhost:3000/api/auth/me", {
+        const res = await api.get("https://vercel.com/areeba-aee0/style-hive/6sAJgFBrp5p1HvR2Yff3ZoPq7yof/api/auth/me", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -57,7 +57,7 @@ function Profile() {
     try {
       setLoading(true);
       const res = await api.put(
-        "http://localhost:3000/api/auth/me",
+        "https://vercel.com/areeba-aee0/style-hive/6sAJgFBrp5p1HvR2Yff3ZoPq7yof/api/auth/me",
         { name, number, country, city, postalCode, password },
         { headers: { Authorization: `Bearer ${token}` } }
       );

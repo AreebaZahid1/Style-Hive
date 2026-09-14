@@ -23,7 +23,7 @@ function Category() {
         try {
 
             const response = await api.get(
-                "http://localhost:3000/api/categories/get-categories"
+                "https://vercel.com/areeba-aee0/style-hive/6sAJgFBrp5p1HvR2Yff3ZoPq7yof/api/categories/get-categories"
             );
 
             setCategories(
@@ -66,7 +66,7 @@ function Category() {
 
             await api.post(
 
-                "http://localhost:3000/api/categories/add-category",
+                "https://vercel.com/areeba-aee0/style-hive/6sAJgFBrp5p1HvR2Yff3ZoPq7yof/api/categories/add-category",
 
                 {
                     name: name
@@ -133,7 +133,7 @@ function Category() {
 
             await api.put(
 
-                `http://localhost:3000/api/categories/update-category/${editId}`,
+                `https://vercel.com/areeba-aee0/style-hive/6sAJgFBrp5p1HvR2Yff3ZoPq7yof/api/categories/update-category/${editId}`,
 
                 {
                     name: name
@@ -191,7 +191,7 @@ function Category() {
 
             await api.delete(
 
-                `http://localhost:3000/api/categories/delete-category/${id}`,
+                `https://vercel.com/areeba-aee0/style-hive/6sAJgFBrp5p1HvR2Yff3ZoPq7yof/api/categories/delete-category/${id}`,
 
                 {
                     headers: {

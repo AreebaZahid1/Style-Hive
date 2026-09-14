@@ -16,7 +16,7 @@ function Login() {
     try
     {
       // response ka obj banaya axios.API ki jis k parameters hain url of the API and body
-        const response = await api.post('http://localhost:3000/api/auth/login', {email,password})
+        const response = await api.post('https://vercel.com/areeba-aee0/style-hive/6sAJgFBrp5p1HvR2Yff3ZoPq7yof/api/auth/login', {email,password})
        console.log(response.data.message)
        
        alert(response.data.message)

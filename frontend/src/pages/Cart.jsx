@@ -21,7 +21,7 @@ function Cart() {
         try {
 
             const response = await api.get(
-                "http://localhost:3000/api/cart/get-cart",
+                "https://vercel.com/areeba-aee0/style-hive/6sAJgFBrp5p1HvR2Yff3ZoPq7yof/api/cart/get-cart",
                 {
                     headers: {
                         Authorization: `Bearer ${token}`
@@ -66,7 +66,7 @@ function Cart() {
         try {
 
             await api.delete(
-                "http://localhost:3000/api/cart/remove",
+                "https://vercel.com/areeba-aee0/style-hive/6sAJgFBrp5p1HvR2Yff3ZoPq7yof/api/cart/remove",
                 {
                     headers: {
                         Authorization: `Bearer ${token}`
