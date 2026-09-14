@@ -1,3 +1,6 @@
+const dns = require('dns');
+dns.setServers(['8.8.8.8', '8.8.4.4']);
+
 require ('dotenv').config();
 
 const express = require('express');
@@ -28,12 +31,22 @@ app.use("/api/products", productRoutes);
 app.use("/api/cart", cartRoutes);
 app.use("/api/order", orderRoutes);
 
-app.get('/', (req, res) => 
-  {
-  res.send('Hello World!');
-  }
-);
-
-app.listen(3000, () => {
-  console.log('Server is running on port 3000');
+app.get('/', (req, res) => {
+ res.status(200).json
+    ({
+        message: 'Ecommerce Backend is running'
+    });
 });
+
+
+
+if (process.env.NODE_ENV !== 'production') 
+  {
+    const port = process.env.PORT || 3000;
+
+    app.listen(port, () => {
+        console.log(`Server is running on port ${port}`);
+    });
+}
+
+module.exports = app;
