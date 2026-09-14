@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../Style/Auth.css";
+import api from "../Axios/api";
 
 function Profile() {
   const navigate = useNavigate();
@@ -26,7 +27,7 @@ function Profile() {
 
     const fetchProfile = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/api/auth/me", {
+        const res = await api.get("http://localhost:3000/api/auth/me", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -55,7 +56,7 @@ function Profile() {
 
     try {
       setLoading(true);
-      const res = await axios.put(
+      const res = await api.put(
         "http://localhost:3000/api/auth/me",
         { name, number, country, city, postalCode, password },
         { headers: { Authorization: `Bearer ${token}` } }

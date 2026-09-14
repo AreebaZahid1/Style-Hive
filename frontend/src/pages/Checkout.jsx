@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../Style/Checkout.css";
+import api from "../Axios/api";
 
 function Checkout() {
     // =========================
@@ -34,7 +35,7 @@ function Checkout() {
 
     const getUserDetails = async () => {
         try {
-            const response = await axios.get(
+            const response = await api.get(
                 "http://localhost:3000/api/auth/me",
                 {
                     headers: {
@@ -62,7 +63,7 @@ function Checkout() {
 
     const getCart = async () => {
         try {
-            const response = await axios.get(
+            const response = await api.get(
                 "http://localhost:3000/api/cart/get-cart",
                 {
                     headers: {
@@ -117,7 +118,7 @@ function Checkout() {
                 postalCode: postalCodeState,
             };
 
-            const response = await axios.put(
+            const response = await api.put(
                 "http://localhost:3000/api/auth/me",
                 payload,
                 {
@@ -195,7 +196,7 @@ function Checkout() {
             console.log("Order data:", orderData);
 
             // Send to the backend route mounted at /api/order/create
-            const response = await axios.post(
+            const response = await api.post(
                 "http://localhost:3000/api/order/create",
                 orderData,
                 {

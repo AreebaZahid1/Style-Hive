@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../Style/Products.css";
+import api from "../Axios/api"; // Import the configured Axios instance
 
 function AddProduct() {
     const navigate = useNavigate();
@@ -25,7 +26,7 @@ function AddProduct() {
 
         const getCategories = async () => {
             try {
-                const response = await axios.get(
+                const response = await api.get(
                     "http://localhost:3000/api/categories/get-categories"
                 );
                 setCategories(response.data.categories || []);
@@ -46,7 +47,7 @@ function AddProduct() {
         }
 
         try {
-            await axios.post(
+            await api.post(
                 "http://localhost:3000/api/products/add-product",
                 {
                     name: name,

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import "../Style/Products.css";
+import api from "../Axios/api";
 
 function EditProduct() {
     const navigate = useNavigate();
@@ -27,7 +28,7 @@ function EditProduct() {
 
         const getCategories = async () => {
             try {
-                const response = await axios.get(
+                const response = await api.get(
                     "http://localhost:3000/api/categories/get-categories"
                 );
                 setCategories(response.data.categories || []);
@@ -38,7 +39,7 @@ function EditProduct() {
 
         const getProduct = async () => {
             try {
-                const response = await axios.get(
+                const response = await api.get(
                     `http://localhost:3000/api/products/get-product/${id}`
                 );
                 const product = response.data.product || {};
@@ -72,7 +73,7 @@ function EditProduct() {
         }
 
         try {
-            await axios.put(
+            await api.put(
                 `http://localhost:3000/api/products/update-product/${id}`,
                 {
                     name: name,

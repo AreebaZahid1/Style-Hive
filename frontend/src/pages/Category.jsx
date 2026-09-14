@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 import "../Style/Category.css";
+import api from "../Axios/api";
 
 function Category() {
 
@@ -21,7 +22,7 @@ function Category() {
 
         try {
 
-            const response = await axios.get(
+            const response = await api.get(
                 "http://localhost:3000/api/categories/get-categories"
             );
 
@@ -63,7 +64,7 @@ function Category() {
 
         try {
 
-            await axios.post(
+            await api.post(
 
                 "http://localhost:3000/api/categories/add-category",
 
@@ -130,7 +131,7 @@ function Category() {
 
         try {
 
-            await axios.put(
+            await api.put(
 
                 `http://localhost:3000/api/categories/update-category/${editId}`,
 
@@ -188,7 +189,7 @@ function Category() {
 
         try {
 
-            await axios.delete(
+            await api.delete(
 
                 `http://localhost:3000/api/categories/delete-category/${id}`,
 

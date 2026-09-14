@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import "../Style/ProductDetail.css";
 import toast from "react-hot-toast";
+import api from "../Axios/api";
 
 function ProductDetails() {
 
@@ -18,7 +19,7 @@ function ProductDetails() {
 
     try {
 
-      const response = await axios.get(`http://localhost:3000/api/products/get-product/${id}`);
+      const response = await api.get(`http://localhost:3000/api/products/get-product/${id}`);
       setProduct(response.data.product);
 
     } 
@@ -40,7 +41,7 @@ function ProductDetails() {
         navigate("/login");
         return;
       }
-      await axios.post("http://localhost:3000/api/cart/add",{ product: product._id,quantity: quantity},
+      await api.post("http://localhost:3000/api/cart/add",{ product: product._id,quantity: quantity},
         {headers: {Authorization: `Bearer ${token}`}});
       alert("Product added to cart");
 

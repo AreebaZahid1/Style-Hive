@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { ShoppingBag, Trash2, ArrowRight } from "lucide-react";
 import "../Style/Cart.css";
+import api from "../Axios/api"; // Import the configured Axios instance
 
 function Cart() {
 
@@ -19,7 +20,7 @@ function Cart() {
 
         try {
 
-            const response = await axios.get(
+            const response = await api.get(
                 "http://localhost:3000/api/cart/get-cart",
                 {
                     headers: {
@@ -64,7 +65,7 @@ function Cart() {
 
         try {
 
-            await axios.delete(
+            await api.delete(
                 "http://localhost:3000/api/cart/remove",
                 {
                     headers: {

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import "../Style/Auth.css";
-import axios from "axios";
+// import axios from "axios";
+import api from "../Axios/api";
 
 function Login() {
 
@@ -15,7 +16,7 @@ function Login() {
     try
     {
       // response ka obj banaya axios.API ki jis k parameters hain url of the API and body
-        const response = await axios.post('http://localhost:3000/api/auth/login', {email,password})
+        const response = await api.post('http://localhost:3000/api/auth/login', {email,password})
        console.log(response.data.message)
        
        alert(response.data.message)

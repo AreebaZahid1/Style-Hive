@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 import { Link } from "react-router-dom";
 import "../Style/Products.css";
 import toast from "react-hot-toast";
+import api from "../Axios/api"; // Import the configured Axios instance
 
 // Local wishlist state map: { [productId]: true }
 // We show a toast and visually fill the heart when a product is added to wishlist.
@@ -44,7 +45,7 @@ function Products() {
 
         try {
 
-            const response = await axios.get(
+            const response = await api.get(
                 "http://localhost:3000/api/categories/get-categories"
             );
 
@@ -69,7 +70,7 @@ function Products() {
 
             setLoading(true);
 
-            const response = await axios.get(
+            const response = await api.get(
                 "http://localhost:3000/api/products/get-products",
                 {
                     params: {
@@ -140,7 +141,7 @@ function Products() {
 
         try {
 
-            await axios.post(
+            await api.post(
 
                 "http://localhost:3000/api/products/add-product",
 
@@ -196,7 +197,7 @@ function Products() {
 
         try {
 
-            await axios.delete(
+            await api.delete(
 
                 `http://localhost:3000/api/products/delete-product/${id}`,
 
