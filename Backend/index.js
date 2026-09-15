@@ -17,10 +17,17 @@ const cartRoutes = require('./routes/cartRoutes');
 const orderRoutes = require('./routes/orderRoutes');
 
 app.use(cors({
-    origin: [
-    'https://style-hive-6qm9.vercel.app',
-    'https://style-hive-6qm9-2ut34l6k6-areeba-aee0.vercel.app'
-],
+    origin: (origin, callback) => {
+        if (
+            !origin ||
+            origin === 'https://style-hive-6qm9.vercel.app' ||
+            origin.endsWith('-areeba-aee0.vercel.app')
+        ) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true
