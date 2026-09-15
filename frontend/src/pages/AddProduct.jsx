@@ -27,7 +27,7 @@ function AddProduct() {
         const getCategories = async () => {
             try {
                 const response = await api.get(
-                    "https://vercel.com/areeba-aee0/style-hive/6sAJgFBrp5p1HvR2Yff3ZoPq7yof/api/categories/get-categories"
+                    "https://style-hive-nl9ivtptx-areeba-aee0.vercel.app/api/categories/get-categories"
                 );
                 setCategories(response.data.categories || []);
             } catch (error) {
@@ -48,7 +48,7 @@ function AddProduct() {
 
         try {
             await api.post(
-                "https://vercel.com/areeba-aee0/style-hive/6sAJgFBrp5p1HvR2Yff3ZoPq7yof/api/products/add-product",
+                "https://style-hive-nl9ivtptx-areeba-aee0.vercel.app/api/products/add-product",
                 {
                     name: name,
                     description: description,

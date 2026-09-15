@@ -19,7 +19,7 @@ function ProductDetails() {
 
     try {
 
-      const response = await api.get(`https://vercel.com/areeba-aee0/style-hive/6sAJgFBrp5p1HvR2Yff3ZoPq7yof/api/products/get-product/${id}`);
+      const response = await api.get(`https://style-hive-nl9ivtptx-areeba-aee0.vercel.app/api/products/get-product/${id}`);
       setProduct(response.data.product);
 
     } 
@@ -41,7 +41,7 @@ function ProductDetails() {
         navigate("/login");
         return;
       }
-      await api.post("https://vercel.com/areeba-aee0/style-hive/6sAJgFBrp5p1HvR2Yff3ZoPq7yof/api/cart/add",{ product: product._id,quantity: quantity},
+      await api.post("https://style-hive-nl9ivtptx-areeba-aee0.vercel.app/api/cart/add",{ product: product._id,quantity: quantity},
         {headers: {Authorization: `Bearer ${token}`}});
       alert("Product added to cart");
 
