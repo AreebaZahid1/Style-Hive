@@ -18,9 +18,9 @@ const orderRoutes = require('./routes/orderRoutes');
 
 app.use(cors({
     origin: [
-        'https://style-hive-6qm9.vercel.app',
-        'https://style-hive-6qm9-n7pxq3n2o-areeba-aee0.vercel.app'
-    ],
+    'https://style-hive-6qm9.vercel.app',
+    'https://style-hive-6qm9-2ut34l6k6-areeba-aee0.vercel.app'
+],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true
