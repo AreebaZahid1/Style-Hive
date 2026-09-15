@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-   baseURL: import.meta.env.VITE_API_URL || "https://style-hive-nl9ivtptx-areeba-aee0.vercel.app",
+  baseURL: import.meta.env.VITE_API_URL || "http://localhost:3000/",
 });
 
 api.interceptors.request.use(

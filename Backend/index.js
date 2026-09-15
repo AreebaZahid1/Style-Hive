@@ -1,47 +1,47 @@
 const dns = require('dns');
 dns.setServers(['8.8.8.8', '8.8.4.4']);
 
-require ('dotenv').config();
+require('dotenv').config();
 
 const express = require('express');
 const cors = require('cors');
 
 const app = express();
 
-const dotenv = require('dotenv');
-
 const connectDb = require('./config/db');
 
 const authRoutes = require('./routes/authRoutes');
 const categoryRoutes = require('./routes/categoryRoutes');
-const productRoutes = require("./routes/productRoutes");
-const cartRoutes = require("./routes/cartRoutes");
-const orderRoutes = require("./routes/orderRoutes");
-
-dotenv.config()
+const productRoutes = require('./routes/productRoutes');
+const cartRoutes = require('./routes/cartRoutes');
+const orderRoutes = require('./routes/orderRoutes');
 
 connectDb();
 
-app.use(cors());
+app.use(cors({
+    origin: 'https://style-hive-6qm9.vercel.app',
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true
+}));
+
+app.options('*', cors());
+
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);
 app.use('/api/categories', categoryRoutes);
-app.use("/api/products", productRoutes);
-app.use("/api/cart", cartRoutes);
-app.use("/api/order", orderRoutes);
+app.use('/api/products', productRoutes);
+app.use('/api/cart', cartRoutes);
+app.use('/api/order', orderRoutes);
 
 app.get('/', (req, res) => {
- res.status(200).json
-    ({
+    res.status(200).json({
         message: 'Ecommerce Backend is running'
     });
 });
 
-
-
-if (process.env.NODE_ENV !== 'production') 
-  {
+if (process.env.NODE_ENV !== 'production') {
     const port = process.env.PORT || 3000;
 
     app.listen(port, () => {
