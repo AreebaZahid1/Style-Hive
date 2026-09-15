@@ -29,7 +29,7 @@ function EditProduct() {
         const getCategories = async () => {
             try {
                 const response = await api.get(
-                    "https://style-hive-nl9ivtptx-areeba-aee0.vercel.app/api/categories/get-categories"
+                    "/categories/get-categories"
                 );
                 setCategories(response.data.categories || []);
             } catch (error) {
@@ -40,7 +40,7 @@ function EditProduct() {
         const getProduct = async () => {
             try {
                 const response = await api.get(
-                    `https://style-hive-nl9ivtptx-areeba-aee0.vercel.app/api/products/get-product/${id}`
+                    `/products/get-product/${id}`
                 );
                 const product = response.data.product || {};
 
@@ -74,7 +74,7 @@ function EditProduct() {
 
         try {
             await api.put(
-                `https://style-hive-nl9ivtptx-areeba-aee0.vercel.app/api/products/update-product/${id}`,
+                `/products/update-product/${id}`,
                 {
                     name: name,
                     description: description,

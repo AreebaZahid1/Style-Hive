@@ -23,7 +23,7 @@ function Signup() {
     try {
 
         const response = await api.post(
-            "https://style-hive-nl9ivtptx-areeba-aee0.vercel.app/api/auth/register",
+            "/auth/register",
             {
                 name,
                 email,

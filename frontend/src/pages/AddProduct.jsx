@@ -27,7 +27,7 @@ function AddProduct() {
         const getCategories = async () => {
             try {
                 const response = await api.get(
-                    "https://style-hive-nl9ivtptx-areeba-aee0.vercel.app/api/categories/get-categories"
+                    "/categories/get-categories"
                 );
                 setCategories(response.data.categories || []);
             } catch (error) {
@@ -48,7 +48,7 @@ function AddProduct() {
 
         try {
             await api.post(
-                "https://style-hive-nl9ivtptx-areeba-aee0.vercel.app/api/products/add-product",
+                "/products/add-product",
                 {
                     name: name,
                     description: description,

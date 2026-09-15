@@ -36,7 +36,7 @@ function Checkout() {
     const getUserDetails = async () => {
         try {
             const response = await api.get(
-                "https://vercel.com/areeba-aee0/style-hive/6sAJgFBrp5p1HvR2Yff3ZoPq7yof/api/auth/me",
+                "/auth/me",
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -64,7 +64,7 @@ function Checkout() {
     const getCart = async () => {
         try {
             const response = await api.get(
-                "https://style-hive-nl9ivtptx-areeba-aee0.vercel.app/api/cart/get-cart",
+                "/cart/get-cart",
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -119,7 +119,7 @@ function Checkout() {
             };
 
             const response = await api.put(
-                "https://style-hive-nl9ivtptx-areeba-aee0.vercel.app/api/auth/me",
+                "/auth/me",
                 payload,
                 {
                     headers: {
@@ -197,7 +197,7 @@ function Checkout() {
 
             // Send to the backend route mounted at /api/order/create
             const response = await api.post(
-                "https://style-hive-nl9ivtptx-areeba-aee0.vercel.app/api/order/create",
+                "/order/create",
                 orderData,
                 {
                     headers: {
