@@ -16,16 +16,12 @@ const productRoutes = require('./routes/productRoutes');
 const cartRoutes = require('./routes/cartRoutes');
 const orderRoutes = require('./routes/orderRoutes');
 
-connectDb();
-
 app.use(cors({
     origin: 'https://style-hive-6qm9.vercel.app',
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true
 }));
-
-app.options('*', cors());
 
 app.use(express.json());
 
@@ -40,6 +36,8 @@ app.get('/', (req, res) => {
         message: 'Ecommerce Backend is running'
     });
 });
+
+connectDb();
 
 if (process.env.NODE_ENV !== 'production') {
     const port = process.env.PORT || 3000;
